@@ -12,7 +12,7 @@ public class StudentMarks {
 		
 		int[] marks=new int[size];
 		
-		int average=0;
+		double average=0;
 		for(int i=0; i<marks.length;i++) {
 			System.out.println("Enter the mark for subject number = "+ (i+1));
 			int mark = sc.nextInt();
