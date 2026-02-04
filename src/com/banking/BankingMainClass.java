@@ -10,7 +10,7 @@ public class BankingMainClass {
         Scanner sc = new Scanner(System.in);
         BankingOperations vishalAccount = null;
 
-        // Account creation (runs once)
+
         while (vishalAccount == null) {
             try {
                 System.out.println("Enter the Account number:");
@@ -28,26 +28,26 @@ public class BankingMainClass {
                 vishalAccount = new BankingOperations(accountNumber, holderName, password, minimumAmount);
 
             } catch (InputMismatchException e) {
-                System.err.println("❌ Enter only valid number values!");
-                sc.nextLine(); // clear invalid input
+                System.err.println("Enter only valid number values!");
+                sc.nextLine();
             }
         }
 
         boolean running = true;
 
-        // Menu loop (runs continuously)
+        
         while (running) {
             try {
                 System.out.println("\nChoose any one of the operations....");
                 System.out.println("1. Add Balance");
                 System.out.println("2. Withdraw Balance");
                 System.out.println("3. Exit");
-                System.out.print("Enter your choice: ");
+                System.out.print("Enter your selection: ");
 
                 int selection = sc.nextInt();
 
                 if (selection == 3) {
-                    System.out.println("Thank you! Exiting...");
+                    System.out.println("Exiting...");
                     running = false;
                     break;
                 }
@@ -61,8 +61,8 @@ public class BankingMainClass {
                 vishalAccount.SwitchOperations(selection, vishalAccount, amountValue, passwordValue);
 
             } catch (InputMismatchException e) {
-                System.err.println("❌ Enter only the displayed numbers!");
-                sc.nextLine(); // clear invalid input
+                System.err.println("Enter only the displayed numbers!");
+                sc.nextLine(); 
             }
         }
 
