@@ -4,10 +4,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class StudentDriver {
-
 	
 	public static void main(String[] args) {
-		
 	
 		Set<Student> studSet = new TreeSet<Student>(new StudentIdComparator());
 		studSet.add(new Student(103, "Vishal", 23));
