@@ -25,5 +25,11 @@ public class Contact {
 	public void setContactname(String contactname) {
 		this.contactname = contactname;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Contact [phoneNumber=" + phoneNumber + ", contactname=" + contactname + "]";
+	}
 	
 }
