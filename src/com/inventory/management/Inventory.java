@@ -54,7 +54,7 @@ public class Inventory {
 	}
 
 	public synchronized boolean customerPurchase(int customerId, int quantity) {
-
+		try {
 		if (quantity <= 0) {
 			throw new QuantityCannotBeZeroException("Quantity must be greater than 0");
 		}
@@ -80,6 +80,9 @@ public class Inventory {
 
 			return false;
 		}
+	}catch( QuantityCannotBeZeroException | StockNotPresentException e) {
+		System.err.println(" Error : "+Thread.currentThread().getName()+" - " + e.getMessage());
+		return false;
 	}
-
+}
 }

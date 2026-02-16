@@ -5,7 +5,7 @@ public class PurchaseStockDriver {
 	public static void main(String[] args) {
 		Inventory inventory = new Inventory(123, "Mobile", 10, true);
 		
-		Customer adam = new Customer(101, "Adam Smith", inventory, 2);
+		Customer adam = new Customer(101, "Adam Smith", inventory, 0);
 		
 		Customer john = new Customer(102, "John Dev", inventory, 4);
 		
@@ -28,13 +28,13 @@ public class PurchaseStockDriver {
 			int customerId = simba.getCustomerId();
 			int purchaseQuantity = simba.getPurchaseQuantity();
 			inventory.customerPurchase(customerId , purchaseQuantity);
-		} , "John's Thread");
+		} , "Simba's Thread");
 		
 		Thread purchase4 = new Thread( ()->{
 			int customerId = simba.getCustomerId();
 			int purchaseQuantity = simba.getPurchaseQuantity();
 			inventory.customerPurchase(customerId , purchaseQuantity);
-		} , "John's Thread");
+		} , "Simba's Thread");
 		
 		
 		purchase1.start();
