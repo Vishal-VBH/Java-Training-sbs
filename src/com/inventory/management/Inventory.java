@@ -77,8 +77,7 @@ public class Inventory {
 		} else {
 			System.out.println("Customer " + customerId + " failed to purchase " + quantity
 					+ " units. Stock available: " + productStock);
-
-			return false;
+			throw new StockNotPresentException("Stock Quantity is less...");
 		}
 	}catch( QuantityCannotBeZeroException | StockNotPresentException e) {
 		System.err.println(" Error : "+Thread.currentThread().getName()+" - " + e.getMessage());
